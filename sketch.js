@@ -1,20 +1,42 @@
 let pozadi;
-let ptak;
-let width = 1000;
-let length = 600;
-function preload(){
-  pozadi = loadImage("pozadi.jpg");
-  ptak = loadImage("ptacek.png");
+let ptakObj;
+class Ptacek {
+  constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.width = 100;
+      this.height = 80;
+      this.gravity = 3;
+  }
+
+  draw() {
+      image(ptak, this.x, this.y, this.width, this.height);
+  }
+  update() {
+      this.y += this.gravity;
+  }
+  jump(skok) {
+      this.y -= skok;
+  }
 }
+
+function preload() {
+    pozadi = loadImage("pozadi.jpg");
+    ptak = loadImage("ptacek.png");
+}
+
 function setup() {
-  createCanvas(1000, 600);
+    createCanvas(800, 600);
+    ptakObj = new Ptacek(100, 300);
 }
 
 function draw() {
-  if(pozadi){
     background(pozadi);
-  } else {
-    background(0,50,0);
+    ptakObj.update();
+    ptakObj.draw();
+    if (keyIsDown(32)) { 
+      ptakObj.jump(20);
   }
-  image(ptak, 50, length - 80 , 100, 80);
 }
+
+
