@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cz">
   <head>
     <script src="p5.js"></script>
     <script src="p5.sound.min.js"></script>
@@ -9,8 +9,16 @@
   </head>
   <body>
     <main>
-      <h1>Vyhýbačka</h1>
+      <h1 class="">Rocket game</h1>
+      <div class="display-center">
+        <h2>Skóre: <span id="skore">0</span></h2>
+        <h2>Nejlepší skóre: <span id="nejskore">0</span></h2>
+        <button id="start">Start</button>
+        <button id="restart">Restart</button>
+      </div>
     </main>
+    <footer class="display-center mg-3">Matěj Matýsek, třída IT2</footer>
+    
     <script src="sketch.js"></script>
   </body>
 </html>
