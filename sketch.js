@@ -33,7 +33,7 @@ class Raketa {
     detectCollision(meteorit) {
         // Kontrola kolize s meteoritem
         if (this.x < meteorit.x + meteorit.width &&
-            this.x + this.width > meteorit.x &&
+            this.x + this.width > meteorit.x - meteorit.width &&
             this.y < meteorit.y + meteorit.height &&
             this.y + this.height > meteorit.y) {
             return true; // Kolize detekována
